@@ -54,10 +54,58 @@
         $count++;
     }
 
-    $came_from = htmlentities($_SERVER['HTTP_REFERER']);
-    print '<br>dasdsadada' . 'ads';
+    print '<br>dasdsadada' . 'ads<br>';
     
 
     #------------------expressions------------------------
     $y = 3 * (abs(2*$pi) + 4);
-    
+    echo "a: [" . TRUE . "]<br>";
+    echo "b: [" . FALSE . "]<br>";
+
+    echo "a: [" . (20 > 9) . "]<br>";
+    echo "b: [" . (5 == 6) . "]<br>";
+    echo "c: [" . (1 == 0) . "]<br>";
+    echo "d: [" . (1 == 1) . "]<br>";
+
+    $myname = "Brian";
+    $myage = 37;
+
+    echo "a: " . 73 . "<br>";      # int literal
+    echo "b: " . "Hello" . "<br>"; # string literal
+    echo "c: " . FALSE . "<br>";    # CONST literal
+    echo "d: " . $myname . "<br>";  # string var
+    echo "e: " .  (string)$myage . "<br>";   # int var
+
+    $day_number = 55;
+    $days_to_new_year = 366 - $day_number;  # expr
+    if ($days_to_new_year < 30)
+    {
+        echo "nEw yEaR soOn";           # instruction
+    }
+
+    #----------------------------operators---------------------------
+
+    $a = '1000';
+    $b = '+1000';
+    if ($a == $b) echo '1<br>';
+    if ($a === $b) echo '2';
+
+    $a = '1000';
+    $b = '+1000';
+    if ($a != $b) echo '1<br>';
+    if ($a !== $b) echo '2<br>';
+
+
+    $a = 3; $b = 3;
+
+    if ($a > $b) echo "$a greater than $b<br>";
+    if ($a < $b) echo "$a less than $b<br>";
+    if ($a >= $b) echo "$a greater or equal to $b<br>";
+    if ($a <= $b) echo "$a less or equal to $b<br>";
+
+
+    $a = 1; $b = 0;
+    echo ($a AND $b) . "<br>";
+    echo ($a or $b) . "<br>";
+    echo ($a XOR $b) . "<br>";
+    echo !$a . "<br>";
