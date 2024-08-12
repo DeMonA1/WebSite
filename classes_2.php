@@ -1,4 +1,7 @@
 <?php
+    /**
+     * Inharitance
+     */
     class User
     {
         public $name, $password;
