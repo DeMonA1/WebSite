@@ -25,9 +25,13 @@
     printf("[%-'@12.10s]\n", $d);
 ##################################################
 
-$month = 9;
-$day = 31;
-$year = 2025;
+    $month = 9;
+    $day = 31;
+    $year = 2025;
 
-if (checkdate($month, $day, $year)) echo "Acceptable date";
-else echo "Unacceptable date";
+    if (checkdate($month, $day, $year)) echo "Acceptable date";
+    else echo "Unacceptable date";
+
+    $d = "Happy Birthday";
+    printf("%'*7.5s", $d);
+    
