@@ -34,4 +34,5 @@
 
     $d = "Happy Birthday";
     printf("%'*7.5s", $d);
-    
+    $echo1 = mktime(7, 11, 0, 5, -1 , 2025);
+    echo date('g:ia F NS, o', $echo1);
