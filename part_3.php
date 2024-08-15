@@ -52,7 +52,7 @@
     elseif ($page == "Login") echo "You choose Login";
     else echo "Unrecignized choice<br>";
 
-    ##=====switch/case/default-------------####
+    ##=====switch/case/default|| match-------------####
     switch ($page)
     {
         case "Home":
@@ -74,6 +74,42 @@
             echo 'Unrecognized choice<br>';
             break;
     }
+    ######################################3
+    $country = 'USA';
+    switch ($country)
+    {
+        case "UK":
+        case "USA":
+        case "Australia":
+        default:
+            $lang = 'English';
+            break;
+        case 'Spain':
+            $lang = 'Spanish';
+            break;
+        case 'Germany':
+        case 'Austria':
+            $lang = 'German';
+            break;
+    }
+    # EQUAL TO
+
+    $lang = match($country)
+    {
+        'UK', 'USA', 'Australia' =>'English',
+        'Spain' => 'Spanish',
+        'Germany', 'Austria' => 'German',
+        default =>'English',
+    };
+
+    $a = '0e0';
+    $result = match($a)
+    {
+        0 => 'null',
+        '0e0' => 'a',
+    };
+    echo '<br>' . $result;
+
     ##############################
     switch ($page):
         case "Home":
@@ -148,4 +184,3 @@
     $b = 12;
     $c = $a / $b;
     echo 'SSSS:',$c;
-    
