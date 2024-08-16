@@ -2,7 +2,7 @@
     $host = 'localhost';
     $data = 'publications';
     $user = 'root';
-    $pass = '{double}1';
+    $pass = '///////';
     $chrs = 'utf8mb4';
     $attr = "mysql:host=$host;dbname=$data;charset=$chrs";
     $opts = 
