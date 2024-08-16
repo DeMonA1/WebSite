@@ -17,7 +17,7 @@
 
     function mysql_fix_string($pdo, $string)
     {
-        return $pdo->quote($string);
+        return $pdo->quote(stripslashes($string));
     }
 
     $user = mysql_entities_fix_string($pdo, $_POST['user']);

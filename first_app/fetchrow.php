@@ -21,4 +21,3 @@
         echo 'Year: ' . htmlspecialchars($row['year']) . '<br>';
         echo 'ISBN: ' . htmlspecialchars($row['isbn']) . '<br><br>';
     }
-?>

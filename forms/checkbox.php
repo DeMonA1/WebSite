@@ -1,0 +1,7 @@
+Vanilla <input type="checkbox" name="ice" value="Vanilla">
+Chocolate <input type="checkbox" name="ice" value="Chocolate">
+Strawberry <input type="checkbox" name="ice" value="Strawberry">
+<br>
+Vanilla <input type="checkbox" name="ice[]" value="Vanilla">
+Chocolate <input type="checkbox" name="ice[]" value="Chocolate">
+Strawberry <input type="checkbox" name="ice[]" value="Strawberry">
