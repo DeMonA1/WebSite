@@ -33,8 +33,20 @@
         $pw = $row['password'];
 
         if (password_verify(str_replace("'", "", $pw_temp), $pw))
+        {
+            ini_set('session.gc_maxlifetime', 60 * 60);
+
+            session_start();
+
+            $_SESSION['forename'] = $fn;
+            $_SESSION['surname'] = $sn;
+
+            echo ini_get('session.gc_maxlifetime') . '<br>';
+
             echo htmlspecialchars("$fn $sn : Hi $fn,
                 you are now logged in as '$un'");
+            die ("<p><a href='continue.php'>Click here to continue </a></p>");
+        }
         else die("Invalid username/password combination");
     }
     else
