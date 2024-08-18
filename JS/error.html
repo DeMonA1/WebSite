@@ -1,0 +1,20 @@
+<html>
+    <head><title>Error</title></head>
+    <body>
+        <script>
+            onerror = errorHandler
+            document.writ('Welcome on this website') // error
+
+            function errorHandler(message, url, line)
+            {
+                out = 'Unfortunately, an error has been detected\n\n';
+                out += 'Error: ' + message + '\n';
+                out += 'URL: ' + url + '\n';
+                out += 'String: ' + line + '\n\n';
+                out += 'Press the OK button to continue work \n\n'
+                alert(out);
+                return true 
+            }
+        </script>
+    </body>
+</html>

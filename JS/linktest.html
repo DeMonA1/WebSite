@@ -1,0 +1,33 @@
+<html>
+    <head><title>The link test</title></head>
+    <body>
+        <a id="mylink" href="http://mysite.com">Click</a><br>
+        <script>
+
+            function $(id)
+            {
+                return document.getElementById(id)
+            }
+
+            url = document.links.mylink.href
+            document.write('URL-address - ' + url + '<br>')
+            document.write('URL-address - ' + mylink.href + '<br>')
+            document.write('URL-address - ' + $('mylink').href + '<br>')
+
+            ////////////////////////////////////////////////
+
+            url = document.links[0].href
+            numlinks = document.links.length
+            for (j=0; j < document.links.length; ++j)
+                document.write(document.links[j].href + '<br>')
+            
+            document.write(history.length)
+            //history.go(-1)
+            // history.back()
+            //history.forward()
+
+            //document.location.href = 'http://google.com'
+
+        </script>
+    </body>
+</html>
