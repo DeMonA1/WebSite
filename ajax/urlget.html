@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<!-- urlget.html -->
+    <head>
+        <title>Example of asynchronous data exchange</title>
+    </head>
+    <body style="text-align:center">
+        <h1>Loading of web-page into the DIV-container</h1>
+        <div id="info">This sentence will be replaced</div>
+        <script>
+            let nocache = "&nocache=" + Math.random() * 1000000
+            let XHR = new XMLHttpRequest()
+
+            XHR.open("GET", "http://localhost/ajax/urlget.php?url=euronews.com" + 
+                        nocache, true)
+            XHR.send()
+
+            XHR.onreadystatechange = function()
+            {
+                if (this.readyState == 4 && this.status == 200)
+                {
+                    document.getElementById("info").innerHTML = this.responseText
+                }
+            }
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><!--urlpost.html -->
+    <head>
+        <title>Example of asynchronous data exchange</title>
+    </head>
+    <body style="text-align:center">
+        <h1>Loading of web-page to container</h1>
+        <div id="info">This sentence will be replaced</div>
+
+        <script>
+            let XHR = new XMLHttpRequest()
+
+            XHR.open("POST", "http://localhost/ajax/urlpost.php", true)
+            XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+            XHR.send("url=www.euronews.com")
+
+            XHR.onreadystatechange = function()
+            {
+                if (this.readyState == 4 && this.status == 200)
+                {
+                    document.getElementById("info").innerHTML = this.responseText
+                }
+            }
+        </script>
+    </body>
+</html>
