@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <!-- xmlget.html -->
+    <head>
+        <title>Example of asynchronous data exchange</title>
+    </head>
+    <body>
+        <h1>Loading of XML-content into the DIV-container</h1>
+        <div id="info">This sentence will be replaced</div>
+        <script>
+            let out = ''
+            let nocache = "&nocache=" + Math.random() * 1000000
+            let url = "news.yahoo.com/rss/topstories"
+            let XHR = new XMLHttpRequest()
+
+            XHR.open("POST", "http://localhost/ajax/xmlget.php?url=" + url + nocache, true)
+            XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+            XHR.send()
+
+            XHR.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    let titles = this.responseXML.getElementsByTagName('title')
+                    for (let j = 0; j < titles.length; ++j) {
+                        out += titles[j].childNodes[0].nodeValue + '<br>'
+                    }
+                    document.getElementById('info').innerHTML = out
+                }
+            }
+        </script>
+    </body>
+</html>
