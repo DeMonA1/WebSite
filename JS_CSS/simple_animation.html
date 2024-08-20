@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple animation</title>
+        <script src="OSC.js"></script>
+        <style>
+            #box {
+                position: absolute;
+                background: orange;
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <script>
+            SIZE = LEFT = 0
+
+            function animate() {
+                SIZE += 10
+                LEFT += 3
+
+                if (SIZE == 200) SIZE = 0
+                if (LEFT == 600) LEFT = 0
+
+                S('box').width = SIZE + 'px'
+                S('box').height = SIZE + 'px'
+                S('box').left = LEFT + 'px'
+            }
+            
+            setInterval(animate, 30)
+        </script>
+    </body>
+</html>

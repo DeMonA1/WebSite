@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unembeded JS</title>
+        <script src="OSC.js"></script>
+    </head>
+    <body>
+        <img id='object' src="apple.png">
+
+        <script>
+            myobject.visibility = 'hidden'
+            myobject.visibility = 'visible'
+            myobject.display = 'none'
+            myobject.display = 'block'
+            myelement.innerHTML = 'New content'
+            O('someid').innerHTML = 'New content'
+            O('someid').innerHTML = ''
+
+
+
+            setTimeout(dothis, 5000)
+            function dothis() {
+                alert('This is your alert!')
+            }
+            handle = setTimeout("alert('Hello!)", 5000)
+            setTimeout("document.write('Starting'); alert('Hello!')", 5000)
+
+            setTimeout(dothis, 5000); function dothis() {
+                setTimeout(dothis, 5000); alert('I annoy you!')
+            }
+            
+            clearTimeout(handle)
+        </script>
+    </body>
+</html>
