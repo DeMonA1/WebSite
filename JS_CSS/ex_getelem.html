@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example</title>
+        <script src="OSC.js"></script>
+    </head>
+    <body>
+        <script>
+            fred = O('myobj')
+            S(fred).color = 'blue'
+
+
+            myarray = C('myclass')
+            for (i = 0; i < myarray.length; ++j) {
+                S(myarray[j]).textDecoration = 'underline'
+            }
+
+
+            fred.fontSize = '16pt'
+            fred.setAttribute('style', 'font-size:16pt')
+        </script>
+        <div id="myobj">Some text</div>
+        <div class="myclass">Contents of div-container</div>
+        <div class="myclass">Contents of sample</div>
+    </body>
+</html>
