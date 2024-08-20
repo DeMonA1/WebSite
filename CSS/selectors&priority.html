@@ -1,0 +1,60 @@
+<!-- IMPORT -->
+<style>
+    @import url('styles.css');
+</style>
+
+<link rel="stylesheet" href = 'styles.css'>
+
+<!-- INNER STYLE OPTION -->
+<div style="font-style: italic; color: blue;">Hello there</div>
+<a href="http://google.com" style="color: green;">Visit Google</a>
+
+<!-- ID -->
+<div id="welcome">Hello there</div>
+<div id="myid">Hi</div><span id="myid">Hi</span>
+<style>
+    #welcome { font-style: italic; color: blue; }
+    #myid { font-style: italic; }
+    span#myid { text-decoration: underline; }
+    div#myid { text-decoration: underline; }
+</style>
+
+<!-- CLASSES -->
+<div class="welcome">Hi</div>
+<style>
+    .welcome {font-style: italic; color: blue; }
+    .myclass { margin-left: 10px; }
+    p.main { text-indent: 30px; }
+</style>
+
+<!-- SELECTORS -->
+<!-- SELECTOR of type -->
+<style> 
+    p { text-align: justify;}
+</style>
+<!-- SELECTOR of descendant <p><b> .....-->
+<style> 
+    p b {color: red;}
+    ul li b {color: blue; }
+</style>
+<!-- SELECTOR OF ATTRIBUTES -->
+<style>
+    [type='submit'] { width: 100px; }
+    form input[type='submit'] { width: 100px; }
+</style>
+
+<!-- UNIVERSAL SELECTOR -->
+<style>
+    #boxout * p { border: 1px solid green;}
+</style>
+
+<!-- Group selection -->
+<style>
+    p, #idname, .classname { border-bottom: 1px dotted orange; }
+</style>
+<div class="classname">Text</div>
+
+<!-- IMPORTANT -->
+<style>
+    p {color:#ff0000 !important; }
+</style>
