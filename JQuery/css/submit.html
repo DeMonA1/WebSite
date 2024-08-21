@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Events: submit</title>
+        <script src="jquery-3.7.1.js"></script>
+        <body>
+            <form id="form">
+                Name: <input id="fname" type="text" name="fname"><br>
+                Surname: <input id="lname" type="text" name="lname"><br>
+                <input type="submit">
+            </form>
+            <script>
+                $('#form').submit(function() {
+                    if ($('#fname').val() == '' || $('#lname').val() == '') {
+                        alert('Please, enter your name and surname')
+                        return false
+                    }
+                })
+            </script>
+        </body>
+    </head>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event: keypress</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+    <body>
+        <h2>Press some keys</h2>
+        <form>
+            <label for="target">Type smth</label>
+            <input id="target" type="text">
+        </form>
+        <div id="result"></div>
+        <script>
+            var count = 0
+            $('#target').on("keypress", function(event) {
+                if ( event.which == 13 ) {
+                    event.preventDefault()
+                }
+            count++;
+            var msg = 'You have pressed the key ' + count + ' time(s)'
+            var msg_2 = event.type +' : ' + event.which + '--' + String.fromCharCode(event.which)
+            $('#result').html(msg+'<br>'+msg_2)
+            })
+        </script>
+    </body>
+</html>
