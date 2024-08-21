@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Events: click and dbclick</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+    <body>
+        <h2>Make a click and double click on the buttons</h2>
+        <button class="myclass">Button1</button>
+        <button class="myclass">Button2</button>
+        <button class="myclass">Button3</button>
+        <button class="myclass">Button4</button>
+        <button class="myclass">Button5</button>
+        <script>
+            $('.myclass').click( function() { $(this).slideUp() })
+            $('.myclass').dblclick( function() { $(this).hide() })
+        </script>
+    </body>
+</html>
