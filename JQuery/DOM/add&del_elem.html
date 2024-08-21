@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Changing DOM</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+    <body>
+        <h2>Document example</h2>
+        <a href="http://google.com" title="Google">Visit Google</a>
+        <code>
+            This is a code section
+        </code>
+        <p>
+            <button id="a">Delete image</button>
+            <button id="b">Clear the quote</button>
+        </p>
+        <img id="ball" src="ball.png">
+        <blockquote id="quote" style="border: 1px dotted #444; height: 20px;">
+            Test
+        </blockquote>
+        <script>
+            $('a').prepend('Link: ')
+            $("[href^='http']").append(" <img src='link.png'>")
+            $('code').before('<hr>').after('<hr>')
+            $('#a').click(function() {$('#ball').remove()})
+            $('#b').click(function() {$('#quote').empty()})
+        </script>
+    </body>
+</html>

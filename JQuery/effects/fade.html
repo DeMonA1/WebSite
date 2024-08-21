@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Effect: dissolution and manifestation</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+    <body>
+        <button id="fadeout">Dissolve</button>
+        <button id="fadein">Manifest</button>
+        <button id="fadetoggle">Toggle state</button>
+        <button id="fadeto">Dissolve on 50%</button>
+        <p id="text">Click on buttons that located at the top</p>
+        <script>
+            $('#fadeout').click(function() {$('#text').fadeOut('slow')})
+            $('#fadein').click(function() {$('#text').fadeIn('slow')})
+            $('#fadetoggle').click(function() {$('#text').fadeToggle('slow')})
+            $('#fadeto').click(function() {$('#text').fadeTo('slow', 0.5)})
+        </script>
+    </body>
+</html>
