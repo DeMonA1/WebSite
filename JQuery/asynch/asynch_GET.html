@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html><!-- asynch_GET.html -->
+    <head>
+        <title>JQuery asynchronous GET-query</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+    <body style="text-align: center">
+        <h1>Loading of web-page into DIV</h1>
+        <div id="info">This sentence will be replaced</div>
+        <script>
+            $.get('urlget.php?url=api.jquery.com/jQuery.browser/#jQuery-browser1', function(data) {
+                $('#info').html(data)
+                $('#info').siblings('.news').prev('font-weight', 'bold')
+            })
+        </script>
+    </body>
+</html>
