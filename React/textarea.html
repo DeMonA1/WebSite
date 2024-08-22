@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My first React project</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.min.js" integrity="sha512-0/F/LhpRyzR2Zp0y5+OIpcPFFd6kT7zia0k7vtvXZFBRyyOJFstxmbxdDc6AlGz+ZmvyXESKzvs8LEkjPbGScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.min.js" integrity="sha512-aTIGujEp0xIZSXrXXFjXL3YiozmMRYjKmll3rLYTmUIGaaidsrQNn+ii04E+VwlpIUNZOF3UBoXRmNQBEdD/qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.25.4/babel.min.js" integrity="sha512-7ZMPcTQ4G5jHQwT9J1V+Nk9ha08/556kum/lRSP3M6CZa9LgBWi4Jj+DRv8TP2dStJ7txJn2cb3bszkvsDoY8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script type="text/babel">
+            const {StrictMode} = React
+            
+            class GetText extends React.Component {
+                constructor(props) {
+                    super(props)
+                    this.state = {value: ''}
+                    this.onChange = this.onChange.bind(this)
+                    this.onSubmit = this.onSubmit.bind(this)
+                }
+            
+                onChange(event) {
+                    this.setState({value: event.target.value})
+                }
+
+                onSubmit(event) {
+                    alert('You send: ' + this.state.value)
+                    event.preventDefault()
+                }
+
+                render() {
+                    return (
+                        <form onSubmit={this.onSubmit}>
+                            <label>
+                                Enter the text: <br />
+                                <textarea rows='5' cols='40' value={this.state.value}
+                                                        onChange={this.onChange} />
+                            </label><br />
+                            <input type='submit' />
+                        </form>
+                    )
+                }
+            }
+
+            doRender(<GetText />, 'display')
+
+            function doRender(elem, dest) {
+                const root = ReactDOM.createRoot(document.getElementById(dest))
+                root.render(<StrictMode>
+                                {elem}
+                            </StrictMode>)
+            }
+        </script>
+    </head>
+    <body>
+        <div id="display" style="font-family:monospace"></div>
+    </body>
+</html>
