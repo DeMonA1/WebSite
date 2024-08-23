@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drawind lines</title>
+        <script src="/JS_CSS/OSC.js"></script>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="420" height="200"></canvas>
+
+        <script>
+            canvas = O('mycanvas')
+            context = canvas.getContext('2d')
+            S(canvas).background = 'lightblue'
+
+            myimage = new Image()
+            myimage.src = 'image.png'
+
+            myimage.onload = function() {
+                context.drawImage(myimage, 0, 0)
+                context.save()
+                context.scale(3, 2) // context.transform(3, 0, 0, 2, 0, 0)
+
+                context.drawImage(myimage, 40, 0)
+                context.restore()
+                context.drawImage(myimage, 0, 100)
+            }
+        </script>
+    </body>
+</html>

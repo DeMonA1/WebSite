@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Painting ractangles</title>
+        <script src="/JS_CSS/OSC.js"></script>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="640" height="240"></canvas>
+
+        <script>
+            canvas = O('mycanvas')
+            context = canvas.getContext('2d')
+            S(canvas).background = 'lightblue'
+
+            gradient1 = context.createRadialGradient(0, 120, 0, 480, 120, 480)
+            gradient1.addColorStop(0, 'red')
+            gradient1.addColorStop(0.14, 'orange')
+            gradient1.addColorStop(0.28, 'yellow')
+            gradient1.addColorStop(0.42, 'green')
+            gradient1.addColorStop(0.56, 'blue')
+            gradient1.addColorStop(0.70, 'indigo')
+            gradient1.addColorStop(0.84, 'violet')
+
+            context.fillStyle = gradient1
+            context.fillRect(20, 20, 600, 200)
+        </script>
+    </body>
+</html>
