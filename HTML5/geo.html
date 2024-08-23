@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example of geolocation</title>
+    </head>
+    <body>
+        <script>
+            function granted(position) {
+                var lat = position.coords.latitude
+                var long = position.coords.longitude
+
+                alert('Access is allowed. Your geolocation:\n\n'
+                    + lat + ", " + long + 
+                "\n\nClick on the button OK for loading of Google Maps \
+                    with your geolocation ")
+                window.location.replace("https://www.google.com/maps/@"
+                    + lat + ", " + long + ",14z")
+            }
+
+            function denied(error) {
+                var message
+
+                switch(error.code) {
+                    case 1: message = "Access denied"; break;
+                    case 2: message = "Position is unavailable"; break;
+                    case 3: message = "The waiting time of the operation has expired"; break;
+                    case 4: message = "Unknown message"; break;
+                }
+
+                alert("The geolocation error: " + message)
+            }
+            
+            if (typeof navigator.geolocation == 'undefined')
+                alert("Geolocation doesn't support.")
+            else navigator.geolocation.getCurrentPosition(granted, denied)
+
+        </script>
+    </body>
+</html>

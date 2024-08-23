@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Canvas of HTML5</title>
+        <script src="/JS_CSS/OSC.js"></script>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="320" height="240">
+            This canvas element with identfier <i>mycanvas</i>
+            This text is visible only in browsers that don't support HTML5
+        </canvas>
+        <script>
+            O('myimage').src = canvas.toDataURL('image/jpeg', 0.4)
+            // rectangle
+            context.fillRect(20, 20, 600, 200)
+            context.fillStyle = 'blue'
+
+            context.clearRect(40, 40, 560, 160)
+
+            context.strokeRect(60, 60, 520, 120) // stroke
+            context.strokeStyle = 'green'
+
+
+
+            context.strokeText('WickerpediA', 0, 0)
+
+            metrics = context.measureText('WickerpediA')
+            width = metrics.width
+
+
+
+            context.lineWidth = 3
+
+            context.lineCap = 'round'
+            context.lineJoin = 'bevel'
+
+            context.miterLimit = 15
+
+
+
+            if (context.isPointInPath(23, 87)) {
+                // Some actions perform here
+            }
+
+
+
+            context.arc(55, 85, 45, 0, Math.PI / 2, false)
+
+            context.arcTo(100, 100, 200, 200, 100)
+
+
+
+            myimage = new Image()
+            myimage.src = 'image.gif'
+
+            myimage.onload = function() {
+                context.drawImage(myimage, 20, 20)
+            }
+
+            context.drawImage(myimage, 140, 20, 220, 220)
+            context.drawImage(myimage, 380, 20, 80, 220)
+
+            context.drawImage(myimage, 20, 140) // x,y
+            context.drawImage(myimage, 20, 140, 100, 100) // h: 100, w:100
+            context.drawImage(myimage, 30, 30, 40, 40, 20, 140) // cut 40x40 with left top corner 30x30
+            context.drawImage(myimage, 30, 30, 40, 40, 20, 140, 100, 100)  //change on 100x100
+        
+            
+
+            idata = createImageData(320, 240)
+
+            newimagedataobject = createImageData(imagedata)
+
+
+
+            context.globalCompositeOperationProperty = 'source-over'
+            context.globalAlpha = 0.9
+
+
+
+            context.scale(-1, 1)
+
+            context.setTransform(1, 0, 1, 1, 0, 0) // instead save and rotate
+        </script>
+    </body>
+</html>
