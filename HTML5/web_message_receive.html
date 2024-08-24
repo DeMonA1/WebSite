@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web-messages (b)</title>
+        <style>
+            #output {
+                font-family: 'Courier New';
+                white-space: pre;
+            }
+        </style>
+        <script src="/JS_CSS/OSC.js"></script>
+    </head>
+    <body>
+        <div id="output">Received messages will be display here</div>
+
+        <script>
+            window.onmessage = function(event) {
+                if (event.origin == "http://localhost") {
+                    O('output').innerHTML = 
+                    '<b>Origin:</b> ' + event.origin + '<br>' +
+                    '<b>Source:</b> ' + event.source + '<br>' +
+                    '<b>Data:</b>   ' + event.data
+                }
+            }
+        </script>
+    </body>
+</html>
