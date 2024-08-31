@@ -58,7 +58,7 @@
                 echo " <a href='messages.php?view=" . $row['auth'] . "&r=$randstr'>" . $row['auth'] . "</a>";
             
                 if ($row['pm'] == 0) 
-                    echo "wrote: &quot;" . $row['message'] . "&quot; ";
+                    echo " wrote: &quot;" . $row['message'] . "&quot; ";
                 else
                     echo "whispered: <span class='whisper'>&quot;" . $row['message'] . "&quot;</span>";
 
