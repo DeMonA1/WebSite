@@ -41,6 +41,8 @@
 
     echo "<br>";
 
+    $friends = false;
+
     if (sizeof($mutual)) {
         echo "<span class='subhead'>$name2 mutual friends</span><ul>";
         foreach ($mutual as $friend)
